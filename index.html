@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>User Form</h1>
+        <form id="userForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="photo">Photo:</label>
+                <input type="file" id="photo" name="photo" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="rank">Rank:</label>
+                <select id="rank" name="rank" required>
+                    <option value="First Rank">First Rank</option>
+                    <option value="Second Rank">Second Rank</option>
+                    <option value="Third Rank">Third Rank</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="idNumber">ID Number:</label>
+                <input type="text" id="idNumber" name="idNumber" pattern="#[0-9]{6}" placeholder="#123456" required>
+            </div>
+            <button type="submit">Generate PDF</button>
+        </form>
+        <div id="pdfContent" class="hidden">
+            <h2 id="pdfName"></h2>
+            <img id="pdfPhoto" src="" alt="Uploaded Photo" width="100">
+            <p id="pdfRank"></p>
+            <p id="pdfIdNumber"></p>
+        </div>
+        <div id="congratsMessage" class="hidden"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
